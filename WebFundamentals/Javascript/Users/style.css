@@ -1,0 +1,28 @@
+*{
+    /* outline: 1px red dotted; */
+}
+table{
+    border: 1px solid black;
+    
+}
+th{
+    padding-right: 50px;
+}
+label{
+    margin-left: 5px;
+    width: 150px;
+}
+input{
+    display: inline-block;
+
+}
+h1{
+    border-bottom: 2px solid black;
+    width: 350px;
+}
+#button{
+    margin-left: 100px;
+}
+form{
+    width: 280px;
+}

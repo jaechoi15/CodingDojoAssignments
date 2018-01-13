@@ -1,0 +1,10 @@
+WINDOWS COMMAND LINE
+1. Windows key + R, cmd, OK, cd desktop
+2. mkdir gittest
+3. cd gittest, git init
+4. copy nul index.html, copy nul style.css, copy nul aboutMe.txt, git add index.html style.css aboutMe.txt, git commit -m "added index.html style.css aboutMe.txt"
+5. notepad aboutMe.txt, enter bio, close notepad, git add aboutMe.txt, git commit -m "updated aboutMe"
+6. notepad aboutMe.txt, enter favorite movie, git add aboutMe.txt, git commit -m "added favorite movie to aboutMe"
+7. git log
+8. git revert -n b9f14a
+9. notepad aboutMe.txt, enter favorite book, git add aboutMe.txt, git commit -m "added favorite book"

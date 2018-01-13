@@ -1,0 +1,4 @@
+Open MySQL Workbench
+Select the Manage Server Connections button
+Configure local instance
+Type "Use twitter" to connect to the twitter database

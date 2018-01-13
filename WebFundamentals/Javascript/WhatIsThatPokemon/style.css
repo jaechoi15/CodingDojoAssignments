@@ -1,0 +1,11 @@
+*{
+    /* outline: 1px red dashed; */
+}
+div {
+    display: inline-block;
+    vertical-align: top;
+    width: 48%;
+}
+#pokeinfo {
+    border: 5px solid red;
+}

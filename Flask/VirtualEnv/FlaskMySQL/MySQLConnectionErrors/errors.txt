@@ -1,0 +1,14 @@
+ERROR: sqlalchemy.exc.OperationalError: (_mysql_exceptions.OperationalError) (1045, "Access denied for user 'root2342'@'localhost' (using password: YES)") (Background on this error at: http://sqlalche.me/e/e3q8)
+FIX: Use the correct user name
+
+ERROR: sqlalchemy.exc.OperationalError: (_mysql_exceptions.OperationalError) (1045, "Access denied for user 'root'@'localhost' (using password: YES)") (Background on this error at: http://sqlalche.me/e/e3q8)
+FIX: Use the correct password
+
+ERROR: ValueError: invalid literal for int() with base 10: '3306sadasd'
+FIX: Remove the alpha characters from the port ValueError
+
+ERROR: sqlalchemy.exc.OperationalError: (_mysql_exceptions.OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (10061)") (Background on this error at: http://sqlalche.me/e/e3q8)
+FIX: Use the correct port number for the host
+
+ERROR: NameError: global name 'dbasdasd' is not defined
+FIX: Use the correct database

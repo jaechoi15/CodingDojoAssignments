@@ -1,0 +1,8 @@
+.location {
+    display: inline-block;
+    vertical-align: top;
+}
+.bottom {
+    display: inline-block;
+    vertical-align: top; 
+}

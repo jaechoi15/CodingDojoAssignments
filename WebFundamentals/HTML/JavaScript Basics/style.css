@@ -1,0 +1,64 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    }
+    #wrapper{
+    background-color: rgb(38, 56, 102);
+    margin: 0px auto;
+    padding: 15px;
+    }
+    h1{
+        border-radius: 10px;
+        width: 0px auto;
+        background-color: rgb(224, 43, 43);
+        color: white;
+        padding: 15px;
+    }
+    h2{
+        margin-top: 5px;
+    }
+    #maincontent{
+        width: 900px;
+        border-radius: 20px;
+        background-color: black;
+        color: white;
+        display: inline-block;
+        margin-top: 10px;
+        padding: 15px;
+        
+    }
+    #navigation{
+        border-radius: 20px;
+        width: 180px;
+        background-color: teal;
+        color: white;
+        margin-top: 10px;
+        padding: 15px;
+        display: inline-block;
+        vertical-align: top;
+    }
+    #footer{
+        border-radius: 20px;
+        background-color: rgb(110, 110, 110);
+        color: white;
+        margin-top: 10px;
+        padding: 15px;
+    }
+    #overview{
+        padding: 5px 0px;
+    }
+    #contentlist{
+        margin-left: 15px;
+    }
+    #contentlist li{
+        padding: 5px 0px;
+    }
+    #navlist{
+        margin-left: 15px;
+    }
+    #subnavlist{
+        margin-left: 20px;
+    }
+    a{
+        color: lightseagreen
+    }

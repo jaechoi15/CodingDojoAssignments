@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Functions</title>
+    <script src="jquery-3.2.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.hide').click(function(){
+                $('.hide-show-toggle h1').hide('slow');
+            });
+            $('.show').click(function(){
+                $('.hide-show-toggle h1').show('slow');
+            });
+            $('.toggle').click(function(){
+                $('.hide-show-toggle h1').toggle('slow');
+            });
+            $('.slideUp').click(function(){
+                $('.slide h1').slideUp('slow');
+            });
+            $('.slideDown').click(function(){
+                $('.slide h1').slideDown('slow');
+            });
+            $('.slideToggle').click(function(){
+                $('.slide h1').slideToggle('slow');
+            });
+            $('.fadeIn').click(function(){
+                $('.fade h1').fadeIn('slow');
+            });
+            $('.fadeOut').click(function(){
+                $('.fade h1').fadeOut('slow');
+            });
+            $('.addClass').click(function(){
+                $('.add h1').addClass('intro note');
+            });
+            $('.before').click(function(){
+                $('.before-after-append h1').before('Hello World!');
+            });
+            $('.after').click(function(){
+                $('.before-after-append h1').after('Bye World!');
+            });
+            $('.append').click(function(){
+                $('.before-after-append h1').append(' Hey World!');
+            });
+            $('.html').click(function(){
+                $('.htmltxt h1').html('<i>Now you dont</i>');
+            });
+            $('.txt').click(function(){
+                $('.htmltxt h1').text('<i>Now you dont</i>');
+            });
+            $('.attr').click(function(){
+                alert("Image width = " + $('.attributevalue h1').attr("width, 270px"));
+            });
+            $('.val').click(function(){
+                $('.attributevalue p').val(function(n, c){
+                    return c + "Jordan";
+                });
+            });
+        });
+    </script>
+    <style>
+        .intro {
+            font-size: 30px;
+            color: blue;
+        }
+        .note {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="hide-show-toggle">
+        <h1>Hide, Show, Toggle</h1>
+        <button class="hide">Hide</button>
+        <button class="show">Show</button>
+        <button class="toggle">Toggle</button>
+    </div>
+    <div class="slide">
+        <h1>slideDown, slideUp, slideToggle</h1>
+        <button class="slideUp">Slide Up</button>
+        <button class="slideDown">Slide Down</button>
+        <button class="slideToggle">Slide Toggle</button>
+    </div>
+    <div class="fade">
+        <h1>Fade In, Fade Out</h1>
+        <button class="fadeOut">Fade Out</button> 
+        <button class="fadeIn">Fade In</button>  
+    </div>
+    <div class="add">
+        <h1>addClass</h1>
+        <button class="addClass">Add Class</button> 
+    </div>
+    <div class="before-after-append">
+        <h1>Before, After</h1>
+        <button class="before">Before</button>
+        <button class="after">After</button>
+        <button class="append">Append</button>     
+    </div>
+    <div class="htmltxt">
+        <h1>Now you see me...</h1>
+        <button class="html">.HTML</button>
+        <button class="txt">.Text</button>
+    </div>
+    <div class="attributevalue">
+        <h1>Attribute</h1>
+        <img src="codingdojo.png" alt="coding dojo">
+        <button class="attr">Return the width of the image</button>
+        <p>Name: <input type="text" name="user" value="Michael"></p>
+        <button class="val">Set value of the input field</button>
+    </div>
+
+</body>
+</html>

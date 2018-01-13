@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Wall</title>
+</head>
+<body>
+    <div class="header">
+        <h1>The Wall</h1>
+        <h3>Welcome {{ logged_user['username'] }}!</h3>
+        <a href="/logout"><button>Logout</button></a>
+    </div>
+    <div class="post_message">
+        <form action="/post_message" method='POST'>
+            <h4>Post a message</h4>
+            <textarea name="message_box" cols="80" rows="5" placeholder='Enter message here'></textarea>
+            <p><input type="submit" value="Post message"></p>
+        </form>
+    </div>
+    <div>
+        <h3>Messages</h3>
+        {% for m in messages %}
+        <h4>{{ m['first_name'] + " " + m['last_name']  + " - " + m['created_at'].strftime("%B %d, %Y %I:%M %p") }} </h4>
+            <p>{{ m['message'] }}</p>
+            <form action="">
+                <h5>Post a comment</h5>
+                <textarea name="comment_box" placeholder="Enter comment here" cols="80" rows="5"></textarea>
+                <p><input type="submit" value="Post comment"></p>
+            </form>
+        {% endfor %}
+
+    </div>
+</body>
+</html>

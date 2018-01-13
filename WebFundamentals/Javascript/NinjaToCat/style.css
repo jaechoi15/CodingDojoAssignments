@@ -1,0 +1,9 @@
+*{
+    /* outline: 1px red dotted; */
+}
+body li{
+    list-style: none;
+}
+ul{
+    padding: 0px;
+}

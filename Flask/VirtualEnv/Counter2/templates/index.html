@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Counter</title>
+</head>
+<body>
+    <h1>Counter: {{ session['counter'] }}</h1>
+    <div>
+        <form action="/plustwo" method = "post">
+            <button>+2</button>
+        </form>
+    </div>
+    <div>
+        <form action="/reset" method = "post">
+            <button>Reset</button>
+        </form>
+    </div>
+</body>
+</html>

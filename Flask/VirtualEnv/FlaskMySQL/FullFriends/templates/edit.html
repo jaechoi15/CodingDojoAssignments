@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit Page</title>
+</head>
+<body>
+    <h1>Edit a Friend</h1>
+    <form action="/update/{{ friend['id'] }}" method='POST'>
+        <table>
+            <tr>
+                <td><label for="first_name">First Name: <input type="text" name ="first_name" value="{{ friend['first_name'] }}"></label></td>
+            </tr>
+            <tr>
+                <td><label for="last_name">Last Name: <input type="text" name ="last_name" value="{{ friend['last_name'] }}"></label></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email: <input type="text" name ="email" value="{{ friend['email'] }}"></label></td>
+            </tr>
+            <tr>
+                <td> <input type="submit" value="Update"></td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>

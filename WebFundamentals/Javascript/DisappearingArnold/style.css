@@ -1,0 +1,21 @@
+*{
+    /* outline: 1px dashed red; */
+    font-family: Arial;
+}
+body{
+    width: 970px;
+}
+img{
+    width: 200px;
+    height: 200px;
+    margin: 15px;
+}
+button{
+    background-color: green;
+    color: white;
+    border-style: 1px solid black;
+    width: 100px;
+    height: 40px;
+    margin-top: 20px;
+    margin-left: 420px;
+}

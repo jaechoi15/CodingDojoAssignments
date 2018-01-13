@@ -1,0 +1,148 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial;
+    }
+.wrapper{
+    width: 970px;
+    /* background-color: rgb(88, 53, 76); */
+    background: -webkit-linear-gradient(left,#48353d,#4c3841); /*Safari 5.1-6*/
+    background: -o-linear-gradient(right,#48353d,#4c3841); /*Opera 11.1-12*/
+    background: -moz-linear-gradient(right,#48353d,#4c3841); /*Fx 3.6-15*/
+    background: linear-gradient(to right, #48353d,#4c3841); /*Standard*/
+}
+.main_header{
+    height: 20px;
+    width: 940px;
+    padding: 15px;
+    background-color: rgb(241, 241, 241);
+}
+.main_header h1{
+    display: inline-block;
+    font-family: "Comic Sans MS";
+
+}
+.main_header h2{
+    display: inline-block;
+    margin-left: 330px;
+    vertical-align: top;
+    font-size: 16pt;
+}
+.main img{
+    height: 250px;
+    width: 400px;
+    display: inline-block;
+    margin: 25px 10px 10px 25px;
+    border: 5px solid lightgray;     
+}
+.about_box{
+    width: 465px;
+    background: -webkit-linear-gradient(bottom right,#fefdfe,#ddcfdc); /*Safari 5.1-6*/
+    background: -o-linear-gradient(bottom right,#fefdfe,#ddcfdc); /*Opera 11.1-12*/
+    background: -moz-linear-gradient(bottom right,#fefdfe,#ddcfdc); /*Fx 3.6-15*/
+    background: linear-gradient(to bottom right, #fefdfe, #ddcfdc); /*Standard*/
+    margin: 25px 10px 10px 20px;
+    border: 5px black;
+    display: inline-block;
+    vertical-align: top;
+}
+.about_box h2{
+	background: -webkit-linear-gradient(#bdbdbf, #888694, #bdbdbf); /* Safari 5.1- 6.0 */
+    background: -o-linear-gradient(#bdbdbf, #888694, #bdbdbf); /* Opera 11.6-12.0 */
+    background: -moz-linear-gradient(#bdbdbf, #888694, #bdbdbf); /* Firefox 3.6-15 */
+    background: linear-gradient(#bdbdbf, #888694, #bdbdbf); /* Standard syntax */
+    color: white;
+    padding: 10px;
+}
+.about_paragraph_one{
+    padding: 10px;
+}
+.about_paragraph_two{
+    padding: 5px 10px 10px 10px;
+}
+.about_paragraph_three{
+    padding: 0px 10px 15px 10px;
+}
+.main_projects{
+    width: 283px;
+    height: 600px;
+    background: -webkit-linear-gradient(left,#fefdfe,#ddcfdc); /*Safari 5.1-6*/
+    background: -o-linear-gradient(right,#fefdfe,#ddcfdc); /*Opera 11.1-12*/
+    background: -moz-linear-gradient(right,#fefdfe,#ddcfdc); /*Fx 3.6-15*/
+    background: linear-gradient(to right, #fefdfe, #ddcfdc); /*Standard*/
+    border: 5px black;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 25px;
+    margin-bottom: 25px;
+    margin-top: 20px;
+}
+.main_projects img{
+    height: 150px;
+    width: 100%;
+}
+.main_projects h2{
+	background: -webkit-linear-gradient(#bdbdbf, #888694, #bdbdbf); /* Safari 5.1- 6.0 */
+    background: -o-linear-gradient(#bdbdbf, #888694, #bdbdbf); /* Opera 11.6-12.0 */
+    background: -moz-linear-gradient(#bdbdbf, #888694, #bdbdbf); /* Firefox 3.6-15 */
+    background: linear-gradient(#bdbdbf, #888694, #bdbdbf); /* Standard syntax */
+    color: white;
+    padding: 10px; 
+}
+.main_projects p{
+    padding: 10px;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+.main_projects h3{
+	background: -webkit-linear-gradient(#bdbdbf, #888694, #bdbdbf); /* Safari 5.1- 6.0 */
+    background: -o-linear-gradient(#bdbdbf, #888694, #bdbdbf); /* Opera 11.6-12.0 */
+    background: -moz-linear-gradient(#bdbdbf, #888694, #bdbdbf); /* Firefox 3.6-15 */
+    background: linear-gradient(#bdbdbf, #888694, #bdbdbf); /* Standard syntax */
+    color: white;
+    padding: 10px; 
+}
+.tech_icons{
+    padding: 5px;
+}
+.tech_icons li{
+    display: inline-block;
+    margin: 5px;
+}
+.tech_icons img{
+    height: 38px;
+    width: 38px;
+}
+.contact_info{
+    background-color: rgb(241, 241, 241);;
+}
+.contact_info p{
+    padding-top: 10px;
+    margin-left: 320px;
+}
+.contact_info img{
+    height: 20px;
+    width: 20px;
+}
+.contact_info ul{
+    margin-left: 250px;
+    padding-top: 10px;
+}
+.contact_info ul li{
+    display: inline-block;
+}
+.contact_info ul a{
+    vertical-align: top;
+    padding: 5px;
+}
+.main_projects a{
+    background-color: #407d61;
+    text-decoration: none;
+    color: white;
+    border-radius: 4px;
+    padding: 3px;
+    margin: 10px 75px;
+    border: 1px solid black;
+    font-weight: bold;
+    width: 200px;
+}
