@@ -1,3 +1,19 @@
+# Create a new class called Bike with the following properties/attributes:
+# price
+# max_speed
+# miles
+
+# Create 3 instances of the Bike class.
+
+# Use the __init__() function to specify the price and max_speed of each instance (e.g. bike1 = Bike(200, "25mph"); In the __init__() also write the code so that the initial miles is set to be 0 whenever a new instance is created.
+
+# Add the following functions to this class:
+# displayInfo() - have this method display the bike's price, maximum speed, and the total miles.
+# ride() - have it display "Riding" on the screen and increase the total miles ridden by 10
+# reverse() - have it display "Reversing" on the screen and decrease the total miles ridden by 5...
+
+# Have the first instance ride three times, reverse once and have it displayInfo(). Have the second instance ride twice, reverse twice and have it displayInfo(). Have the third instance reverse three times and displayInfo().
+
 class Bike(object):
     def __init__(self, price, max_speed):
         self.price = price
@@ -5,7 +21,7 @@ class Bike(object):
         self.miles = 0
 
     def displayInfo(self):
-        print "Price: {}; Max Speed: {}; Total Miles {}".format(str(self.price), str(self.max_speed), str(self.miles))
+        print "Price: ${}; Max Speed: {}mph; Total Miles {} miles".format(str(self.price), str(self.max_speed), str(self.miles))
         return self
 
     def ride(self):
@@ -18,9 +34,9 @@ class Bike(object):
         self.miles -= 10
         return self
 
-bike1 = Bike(200, "25 mph")
-bike2 = Bike(100, "40 mph")
-bike3 = Bike(300, "123 mph")
+bike1 = Bike(200, 25)
+bike2 = Bike(100, 40)
+bike3 = Bike(300, 123)
 
 # Total Miles will display 20
 bike1.ride().ride().ride().reverse().displayInfo()
