@@ -10,3 +10,14 @@ def new(request):
 
 def create(request):
     return HttpResponseRedirect("/")
+
+def show(request, number):
+    response = "placeholder to display blog " + number
+    return HttpResponse(response)
+
+def edit(request, number):
+    response = "placeholder to edit blog " + number
+    return HttpResponse(response)
+
+def destroy(request, number):
+    return HttpResponseRedirect("/")
