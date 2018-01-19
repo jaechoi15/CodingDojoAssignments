@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Session Words</title>
+</head>
+<body>
+    <form action="session_words/process" method="POST">
+        {% csrf_token %}
+        <h1>Add a new word</h1>
+        <p><input type="text" name="word" placeholder="Enter word here"></p>
+        <h3>Choose color:</h3>
+        <p><input type="radio" value="red" name="red"> Red</p>
+        <p><input type="radio" value="green" name="green"> Green</p>
+        <p><input type="radio" value="blue" name="blue"> Blue</p>
+        <p><input type="checkbox" name="font_size" value="font_size"> Show in BIG fonts!</p>
+        <input type="submit" value="Add to Session">
+    </form>
+    
+    {{ request.session.word }}
+</body>
+</html>
