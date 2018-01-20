@@ -18,9 +18,7 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^', include('apps.blogs.urls')),
-    url(r'^new', include('apps.blogs.urls')),
-    url(r'^create', include('apps.blogs.urls')),
-    url(r'^(?P<number>\d+)', include('apps.blogs.urls')),
-    url(r'^(?P<number>\d+)/edit/', include('apps.blogs.urls')),
-    url(r'^(?P<number>\d+)/delete/', include('apps.blogs.urls'))
+    url(r'^blogs/', include('apps.blogs.urls')),
+    url(r'^surveys/', include('apps.surveys.urls')),
+    url(r'^users/', include('apps.users.urls'))
 ]

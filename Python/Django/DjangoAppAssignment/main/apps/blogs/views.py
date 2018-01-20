@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse, redirect, HttpResponseRedirect
+from django.shortcuts import render, HttpResponse, redirect
 
 def index(request):
     response = "placeholder to later display all the list of blogs"
@@ -9,15 +9,15 @@ def new(request):
     return HttpResponse(response)
 
 def create(request):
-    return HttpResponseRedirect("/")
+    return redirect("/blogs")
 
-def show(request, number):
-    response = "placeholder to display blog " + number
+def show(request, blog_id):
+    response = "placeholder to display blog " + blog_id
     return HttpResponse(response)
 
-def edit(request, number):
-    response = "placeholder to edit blog " + number
+def edit(request, blog_id):
+    response = "placeholder to edit blog " + blog_id
     return HttpResponse(response)
 
-def destroy(request, number):
-    return HttpResponseRedirect("/")
+def delete(request, blog_id):
+    return redirect("/blogs")
