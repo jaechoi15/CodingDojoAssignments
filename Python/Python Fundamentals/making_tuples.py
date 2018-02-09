@@ -9,7 +9,7 @@ def make_tuple(my_dict):
     tuple_list = []
     for key, value in my_dict.iteritems():
         # print (key, value)
-        tuple_list.append((key,value))
+        tuple_list.append((key, value))
     print tuple_list
 
 make_tuple(my_dict)

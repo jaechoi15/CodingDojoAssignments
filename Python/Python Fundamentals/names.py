@@ -13,6 +13,9 @@ def student_names(lst):
 
 student_names(students)
 
+# for student in students:
+#     print student["first_name"], student["last_name"]
+
 # Part II
 # Given the following dictionary. Create a function.
 users = {
