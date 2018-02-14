@@ -9,10 +9,10 @@
 <body>
     <fieldset>
         <legend>Submitted Info</legend>
-        <p>Name: {{ name }}</p>
-        <p>Dojo Location: {{ location }}</p>
-        <p>Favorite Language: {{ language }}</p>
-        <p>Comment: {{ comment }}</p>
+        <p>Name: {{ submission['name'] }}</p>
+        <p>Dojo Location: {{ submission['location'] }}</p>
+        <p>Favorite Language: {{ submission['language'] }}</p>
+        <p>Comment: {{ submission['comment'] }}</p>
         <p><a href="/"><button>Go Back</button></a> </p>
     </fieldset>
 </body>

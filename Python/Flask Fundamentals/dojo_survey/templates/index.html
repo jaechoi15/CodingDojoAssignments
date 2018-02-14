@@ -5,11 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dojo Survey</title>
+    <link rel="stylesheet" text="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <form action="/result" method='post'>
+    <form action="/process" method='post'>
         <fieldset>
             <legend>Survey</legend>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                    <p class="errors">{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
             <p>Name: <input type="text" name="name"></p>
             <p>Dojo Location: 
                 <select name="location">
@@ -32,7 +40,7 @@
                     <option value="C#">C#</option>
                 </select>
             </p>
-            <p>Comment (optional):</p>
+            <p>Comment:</p>
             <p><textarea name="comment" cols="30" rows="5"></textarea></p>
             <p><input type="submit" value="Submit"></p>
         </fieldset>
