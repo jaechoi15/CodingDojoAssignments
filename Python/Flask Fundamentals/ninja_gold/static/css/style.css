@@ -1,0 +1,10 @@
+.place {
+    border: solid;
+    display: inline-block;
+}
+.place_name {
+    padding-left: 35px;
+}
+.submit {
+    margin-left: 25px;
+}

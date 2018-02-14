@@ -10,6 +10,7 @@ def index():
     if 'mystery_num' not in session:
         session['mystery_num'] = random.randrange(1, 101)
         print "New Mystery Number =", session['mystery_num']
+        
     else:
         print "Existing Mystery Number =", session['mystery_num']
     return render_template("index.html")
