@@ -7,12 +7,12 @@
     <title>Edit Friend</title>
 </head>
 <body>
-    <form action="/friends/{{ friend['id'] }}" method='post'>
-            <p>First Name: <input type="text" name="upd_first_name"></p>
-            <p>Last Name: <input type="text" name="upd_last_name"></p>
-            <p>Email: <input type="text" name="upd__email"></p>
-            <p><input type="submit" value="Update"></p> 
-        </fieldset>   
+    {{ friend }}
+    <form action="/friends/{{ friend['id'] }}/update" method='post'>
+        <p>First Name: <input type="text" name="upd_first_name"></p>
+        <p>Last Name: <input type="text" name="upd_last_name"></p>
+        <p>Email: <input type="text" name="upd__email"></p>
+        <p><input type="submit" value="Update"></p> 
     </form>
 </body>
 </html>

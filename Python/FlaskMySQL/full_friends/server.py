@@ -40,9 +40,9 @@ def create():
 @app.route('/friends/<friend_id>/edit')
 def edit(friend_id):
     print "hit edit route"
-    query = "SELECT * FROM full_friends WHERE id = :id"
+    query = "SELECT * FROM full_friends WHERE id = :friend_id"
     db = {
-        "id":friend_id
+        "friend_id":friend_id
     }
     friend = mysql.query_db(query,db)
 
@@ -50,19 +50,19 @@ def edit(friend_id):
     return render_template("edit.html", friend=friend)
 
 # Update Friend
-@app.route('/friends/<friend_id>', methods=['POST'] )
+@app.route('/friends/<friend_id>/update', methods=['POST'])
 def update(friend_id):
     print "hit update route"
     upd_first_name = request.form['upd_first_name']
     upd_last_name = request.form['upd_last_name']
     upd_email = request.form['upd_email']
 
-    query = "UPDATE full_friends SET first_name = :first_name, last_name = :last_name, email = :email WHERE id = :id"
+    query = "UPDATE full_friends SET first_name = :first_name, last_name = :last_name, email = :email WHERE id = :friend_id"
     db = {
         "first_name":upd_first_name,
         "last_name":upd_last_name,
         "email":upd_email,
-        "id":friend_id
+        "friend_id":friend_id
     }
     mysql.query_db(query,db)
     return redirect('/')
