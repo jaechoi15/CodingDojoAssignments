@@ -24,6 +24,31 @@ def create():
     email = request.form['email']
     errors = False
 
+    # First Name field validation
+    if len(first_name) < 1:
+        flash("First Name field must not be blank", "error")
+        errors = True
+    elif first_name.isalpha() == False:
+        flash("First Name field cannot contain numbers", "error")
+        errors = True
+
+    # Last Name field validation
+    if len(last_name) < 1:
+        flash("Last Name field must not be blank", "error")
+        errors = True
+    elif last_name.isalpha() == False:
+        flash("Last Name field cannot contain numbers", "error")
+        errors = True
+    
+    # Email field validation
+    if len(email) < 1:
+        flash("Email field must not be blank", "error")
+        errors = True
+    elif not EMAIL_REGEX.match(email):
+        flash("Email address is not in a valid format", "error")
+        errors = True
+
+    # Validations pass
     if not errors: 
         query = "INSERT INTO full_friends (first_name, last_name, email, created_at, updated_at) VALUES (:first_name, :last_name, :email, now(), now())"
         db = {
@@ -47,6 +72,7 @@ def edit(friend_id):
     friend = mysql.query_db(query,db)
 
     print "ID =", friend_id
+    flash("Current friend selected = {} {}".format(friend[0]['first_name'], friend[0]['last_name']))
     return render_template("edit.html", friend=friend)
 
 # Update Friend
@@ -57,18 +83,20 @@ def update(friend_id):
     upd_last_name = request.form['upd_last_name']
     upd_email = request.form['upd_email']
 
-    query = "UPDATE full_friends SET first_name = :first_name, last_name = :last_name, email = :email WHERE id = :friend_id"
+    query = "UPDATE full_friends SET first_name = :first_name, last_name = :last_name, email = :email, updated_at = now() WHERE id = :friend_id"
     db = {
-        "first_name":upd_first_name,
-        "last_name":upd_last_name,
-        "email":upd_email,
-        "friend_id":friend_id
+        "friend_id": friend_id,
+        "first_name": upd_first_name,
+        "last_name": upd_last_name,
+        "email": upd_email
     }
     mysql.query_db(query,db)
+    
+    flash("Updated successfully!", "success")
     return redirect('/')
 
 # Delete Friend
-@app.route('/friends/<friend_id>/delete')
+@app.route('/friends/<friend_id>/delete', methods=['POST'])
 def destroy(friend_id):
     print "hit destroy route"
     query = "DELETE FROM full_friends WHERE id = :friend_id"
@@ -76,6 +104,8 @@ def destroy(friend_id):
         "friend_id":friend_id
     }
     mysql.query_db(query,db)
+
+    flash("Deleted successfully!", "success")
     return redirect('/')
 
 app.run(debug=True)

@@ -8,10 +8,20 @@
 </head>
 <body>
     {{ friend }}
-    <form action="/friends/{{ friend['id'] }}/update" method='post'>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    
+    <h2>Edit a Friend</h2>
+    <form action="/friends/{{ friend[0]['id'] }}/update" method='post'>
         <p>First Name: <input type="text" name="upd_first_name"></p>
         <p>Last Name: <input type="text" name="upd_last_name"></p>
-        <p>Email: <input type="text" name="upd__email"></p>
+        <p>Email: <input type="text" name="upd_email"></p>
         <p><input type="submit" value="Update"></p> 
     </form>
 </body>
