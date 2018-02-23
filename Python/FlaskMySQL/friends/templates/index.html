@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Friends</title>
+</head>
+<body>
+    {{ all_friends }}
+    <h1>These are all my friends!</h1>
+
+    {% for friend in all_friends %}
+    <p>ID: {{ friend['id'] }}</p>
+    <p>First Name: {{ friend['first_name'] }}</p>
+    <p>Last Name: {{ friend['last_name'] }}</p>
+    <p>Occupation: {{ friend['occupation'] }}</p>
+    {% endfor %}
+    <br>
+    {{ one_friend }}
+    <h2>Add a Friend</h2>
+    <form action="/friends" method='post'>
+        <label for="first_name">First Name: <input type="text" name="first_name"></label>
+        <label for="last_name">Last Name: <input type="text" name="last_name"></label>
+        <label for="occupation">Occupation: <input type="text" name="occupation"></label>
+        <input type="submit" value="Add">
+    </form>
+    <br>
+    <h2>Update a Friend</h2>
+    <form action="/update_friend/<friend_id>" method='post'>
+        <label for="first_name">First Name: <input type="text" name="upd_first_name"></label>
+        <label for="last_name">Last Name: <input type="text" name="upd_last_name"></label>
+        <label for="occupation">Occupation: <input type="text" name="upd_occupation"></label>
+        <label for="id">ID: <input type="text" name="upd_id"></label>
+        <input type="submit" value="Update">
+    </form>
+</body>
+</html>
