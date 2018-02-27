@@ -14,6 +14,7 @@ def index():
     print "hit index route"
     return render_template("index.html")
 
+# Registration
 @app.route('/register', methods=['POST'])
 def register():
     print "hit register route"
@@ -27,14 +28,17 @@ def register():
 
     errors = False
 
+    # First Name field validation
     if len(first_name) < 1:
         flash("First name is required", "errors")
         errors = True
     
+    # Last Name field validation
     if len(last_name) < 1:
         flash("Last name is required", "errors" )
         errors = True
 
+    # Email Address field validation
     if len(email) < 1:
         flash("Email address is required", "errors")
         errors = True
@@ -42,6 +46,7 @@ def register():
         flash("Email address is not in a valid format", "errors")
         errors = True
 
+    # Password field validation
     if len(password) < 1:
         flash("Password is required", "errors")
         errors = True
@@ -49,10 +54,12 @@ def register():
         flash("Password must be more than 8 characters", "errors")
         errors = True
     
+    # Password and Password Confirmation field validation
     if not password == c_password:
         flash("Password and confirmation password must match", "errors")
         errors = True
 
+    # Successful registration
     if not errors:
         query = "INSERT INTO users (first_name, last_name, email, password, created_at, updated_at) VALUES (:first_name, :last_name, :email, :password, NOW(), NOW())"
         data = {
@@ -67,6 +74,7 @@ def register():
     
     return redirect('/')
 
+# Login
 @app.route('/login', methods=['POST'])
 def login():
     print "hit login route"
@@ -75,6 +83,7 @@ def login():
     password = request.form['password']
     errors = False
 
+    # First Name field validation
     if len(email) < 1:
         flash("Email address is required", "errors")
         errors = True
@@ -82,10 +91,12 @@ def login():
         flash("Email address is not in a valid format", "errors")
         errors = True
 
+    # Password field validation
     if len(password) < 1:
         flash("Password is required", "errors")
         errors = True
 
+    # Successful login
     if not errors:
         query = "SELECT * FROM users WHERE email = :email LIMIT 1"
         data = {
@@ -102,6 +113,7 @@ def login():
 
     return redirect('/')
 
+# Successful login
 @app.route('/success')
 def success():
     print "hit success route"
