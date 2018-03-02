@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Wall</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="header">
+        <h1>The Wall</h1>
+        <h2>Welcome {{ fullname }}!</h2>
+        <p><a href="/logout"><button>Log Off</button></a></p>
+    </div>
+    <div class="messages">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            <ul>
+                {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+    <div class="post_message">
+        <form action="/post_message" method='POST'>
+            <h3>Post a message</h3>
+            <textarea name="message" cols="60" rows="5"></textarea>
+            <p><input type="submit" class="button" value="Post message"></p>
+        </form>
+    </div>
+    <div class="show_messages">
+        {% for message in all_messages | reverse %}
+            <h4>{{ message['full_name'] }} - {{ message['created_at'] }}</h4>
+            <p class="content">{{ message['message'] }}</p>
+            <h4>Comments</h4>
+                {% for comment in all_comments %}
+                    {% if message['id'] == comment['message_id'] %}
+                        <h5>{{ comment['full_name'] }} - {{ comment['created_at'] }}</h5>
+                            <p class="content">{{ comment['comment'] }}</p>
+                    {% endif %}
+                {% endfor %}
+                <div class="post_comment">
+                    <form action="/post_comment/{{ message['id'] }}" method='POST'>
+                        <p>Post a comment</p>
+                        <textarea name="comment" cols="60" rows="2"></textarea>
+                        <p><input type="submit" class="button" value="Post comment"></p>
+                    </form>
+                </div>
+        {% endfor %}
+    </div>  
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Wall</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+            {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <form action="/login" method='POST'>
+        <fieldset>
+            <legend>Login</legend>
+                <p>Email Address:</p>
+                <p><input type="text" name="email"></p>
+                <p>Password:</p>
+                <p><input type="password" name="password"></p>
+                <p><input type="submit" value="Submit"></p>
+        </fieldset>
+    </form>
+    <br>
+    <form action="/register" method='POST'>
+        <fieldset>
+            <legend>Register</legend>
+            <p>First Name:</p>
+            <p><input type="text" name="first_name"></p>
+            <p>Last Name:</p>
+            <p><input type="text" name="last_name"></p>
+            <p>Email Address:</p>
+            <p><input type="text" name="email"></p>
+            <p>Password:</p>
+            <p><input type="password" name="password"></p>
+            <p>Password Confirmation:</p>
+            <p><input type="password" name="c_password"></p>
+            <p><input type="submit" value="Submit"></p>
+        </fieldset>
+    </form>
+</body>
+</html>

@@ -113,7 +113,7 @@ def login():
 
     return redirect('/')
 
-# Successful login
+# Successful login page
 @app.route('/success')
 def success():
     print "hit success route"
