@@ -1,0 +1,23 @@
+.message {
+    color: green;
+}
+
+.main {
+    border-style: solid;
+    width: 300px;
+    padding-left: 50px;
+}
+
+.name_input {
+    margin-right: 140px;
+}
+
+#location {
+    margin-right: 120px;   
+}
+
+.show {
+    border-style: solid;
+    width: 500px;
+    padding-left: 50px;
+}

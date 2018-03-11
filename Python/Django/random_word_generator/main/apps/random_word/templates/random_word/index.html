@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Random Word Generator</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'random_word/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'survey_form/css/style.css' %}">
 </head>
 <body>
     <div class="main">
@@ -16,6 +16,7 @@
             <h1 class="word">{{ request.session.word }}</h1>
             <input type="submit" value="Generate" class="button">
         </form>
+        <br>
         <a href="/reset"><button class="button">Reset</button></a>
     </div>
 </body>

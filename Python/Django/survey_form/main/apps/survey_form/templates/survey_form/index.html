@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey Form</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'survey_form/css/style.css' %}">
+</head>
+<body>
+    <div class="main">
+        <form action="/process" method='POST'>
+            {% csrf_token %}
+
+            <label for="name">Name:</label>
+            <input type="text" name="name" class="name_input">
+
+            <label for="location">Dojo Location:</label>
+            <select name="location" id="location">
+                <option value="Online">Online</option>
+                <option value="Silicon Valley valley">Silicon Valley</option>
+                <option value="Seattle">Seattle</option>
+                <option value="Los Angeles">Los Angeles</option>
+                <option value="Dallas">Dallas</option>
+                <option value="Chicago">Chicago</option>
+                <option value="Tulsa">Tulsa</option>
+                <option value="Washington D.C.">Washington D.C.</option>
+            </select>
+
+            <label for="language">Favorite Language:</label>
+            <select name="language" id="language">
+                <option value="Python">Python</option>
+                <option value="Ruby on Rails">Ruby on Rails</option>
+                <option value="Java">Java</option>
+                <option value="C#">C#</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="PHP">PHP</option>
+            </select>
+
+            <label for="comment">Comment (optional):</label>
+            <textarea name="comment" cols="30" rows="10"></textarea>
+            <br>
+            <input type="submit">
+        </form>
+    </div>
+</body>
+</html>
