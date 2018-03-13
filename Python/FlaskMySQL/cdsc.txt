@@ -1,0 +1,3 @@
+CSS
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'survey_form/css/style.css' %}">

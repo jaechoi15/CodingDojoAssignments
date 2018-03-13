@@ -5,12 +5,13 @@ from django.shortcuts import render, HttpResponse, redirect
 import random
 
 # Create your views here.
+
+# Display the blank form
 def index(request):
     return render(request, "survey_form/index.html")
 
+# Capture user input into sessions
 def process(request):
-    print "hit process"
-
     try:
         request.session['attempt']
     except KeyError:
@@ -24,10 +25,8 @@ def process(request):
     request.session['comment'] = request.POST['comment']
     
     request.session['attempt'] += 1
-    
     return redirect('/result')
 
+# Display user input
 def result(request):
-    print "hit result"
-
     return render(request, "survey_form/result.html")
