@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Amadon</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'amadon/css/style.css' %}">
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to the Amadon Store!</h1>
+    </div>
+    <div class="main">
+        <table class="items">
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+            <tr>
+                <td>Wireless headphones</td>
+                <td>$99.99</td>
+                <td>
+                    <form action="/amadon/buy" method='POST'>
+                        {% csrf_token %}
+                        <select name="quantity" id="quantity">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                        </select>
+                        <input type="hidden" name="product_id" value="100">
+                        <input type="submit" value="Buy!">
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>Snowboard</td>
+                <td>$299.99</td>
+                <td>
+                    <form action="/amadon/buy" method='POST'>
+                        {% csrf_token %}
+                        <select name="quantity" id="quantity">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                        </select>
+                        <input type="hidden" name="product_id" value="101">
+                        <input type="submit" value="Buy!">
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>Rechargeable Batteries</td>
+                <td>$9.99</td>
+                <td>
+                    <form action="/amadon/buy" method='POST'>
+                        {% csrf_token %}
+                        <select name="quantity" id="quantity">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                        </select>
+                        <input type="hidden" name="product_id" value="102">
+                        <input type="submit" value="Buy!">
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

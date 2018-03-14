@@ -1,0 +1,7 @@
+table {
+    border-style: solid;
+}
+td, th {
+    border: 1px solid;
+    text-align: left;
+}
