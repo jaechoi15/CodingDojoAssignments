@@ -1,0 +1,3 @@
+function slots(quarters) {
+    
+}
