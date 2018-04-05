@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Basics II</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+        function magic_multiply(x, y) {
+            if (x.constructor === Array) {
+                for (i = 0; i < x.length; i++) {
+                    x = x[i] * y;
+                }
+                return x;
+            }
+            else {
+                x = x * y;
+                return x;
+            }
+        }
+        
+        // Test 1
+        console.log("TEST 1")
+        let test1 = magic_multiply(5, 2);
+        console.log(test1);
+
+        // Test 2
+        console.log("TEST 2")
+        let test2 = magic_multiply(0, 0);
+        console.log(test2);
+
+        // Test 3
+        console.log("TEST 3")
+        let test3 = magic_multiply([1, 2, 3], 2);
+        console.log(test3);
+    </script>
+</body>
+</html>
