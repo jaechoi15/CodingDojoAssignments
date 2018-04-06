@@ -10,12 +10,50 @@
     <script>
         // Part I
         function starString(num) {
-            x = num * "*";
-            return x;
+            let stars = "";
+            for (let i = 0; i < num; i++) {
+                stars += "*";
+            }
+            return stars;
         }
 
         let stars = starString(8);
         console.log(stars);
+
+
+        // Part II
+        function drawStars(arr) {
+            const result = [];
+            for (let i = 0; i < arr.length; i++) {
+                result.push(starString(arr[i]));
+            }
+            return result;
+        }
+
+        let draw = [4, 6, 1, 3, 5, 7, 25];
+        console.log(drawStars(draw));
+
+
+        // Part III
+        function drawStars2(arr) {
+            const result = [];
+            for (let i = 0; i < arr.length; i++) {
+                if (typeof arr[i] === 'number') {
+                    result.push(starString(arr[i]));
+                }
+                else if (typeof arr[i] === 'string') {
+                    let string = "";
+                    for (let k = 0; k < arr[i].length; k++) {
+                        string += arr[i][0].toLowerCase();
+                    }
+                    result.push(string);
+                }
+            }
+            return result;
+        }
+
+        let show = [4, "Tom", 1, "Michael", 5, 7, "Jimmy Smith"];
+        console.log(drawStars2(show));      
     </script>
 </body>
 </html>
