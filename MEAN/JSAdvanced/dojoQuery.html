@@ -1,0 +1,45 @@
+<!-- Our assignment is to create our own DojoQuery library that exposes $Dojo to the global namespace. Let’s go over the functionality that $Dojo should have:
+
+The ability to click on an HTML element with a specific id.
+The ability to hover on an HTML element with a specific id. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dojo Query</title>
+</head>
+<body>
+    <button id="someIdForSomeButton">Click here!</button>
+    <button id="someOtherIdForSomeOtherButton">Hover over here!</button>
+
+    <script>
+        ( function() {
+
+            function $Dojo(id){
+            this.id = document.getElementById(id)
+            this.click = function(callback){
+                this.id.addEventListener("click", callback)
+            }
+
+            this.hover = function(over,out){
+                this.id.addEventListener("mouseover", over);
+                this.id.addEventListener("mouseout", out);
+            }
+            return this
+        }
+
+        $Dojo("someIdForSomeButton").click(
+            function() { 
+                console.log("The button was clicked!") });
+
+        $Dojo("someOtherIdForSomeOtherButton").hover(
+            function() { 
+                console.log("The button was hovered on!")});
+                
+        }());
+    </script>
+</body>
+</html>

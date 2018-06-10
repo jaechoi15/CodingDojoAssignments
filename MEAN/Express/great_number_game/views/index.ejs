@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Great Number Game</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div>
+        <h2 class="jumbotron text-center">Welcome to the Great Number Game!</h2>
+        <p class="text-center">I am thinking of a number between 1 and 100</p>
+        <p class="text-center">Take a guess!</p>
+    </div>
+    <div class="text-center">
+        <% if (result == "Too low!" || result == "Too high!") { %>
+            <p class="text-danger"><%= result %></p>
+        <% } else if (result == "Correct!") { %>
+            <p class="text-success"><%= result %></p>
+            <div>
+                <a href="/reset"><button class="btn btn-primary">Play again?</button></a>
+            </div>
+        <% } %>
+    </div>
+    <div class="container">
+        <form action="/process" method='post'>
+            <div class="col-md-2 col-md-offset-5">
+                <input type="guess" class="form-control" name="guess">
+                <br>
+                <input type="submit" value="Submit" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Math</title>
+</head>
+<body>
+    <script>
+        
+        // Math 1
+        function zero_negativity(arr) {
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] < 0) {
+                    return false;
+                }
+            }
+            return true;
+        };
+
+        let math1 = [1,2,-1];
+        console.log(zero_negativity(math1));
+
+
+        // Math 2
+        function is_even(num) {
+            if (num % 2 == 0) {
+                return true;
+            }
+            return false;
+        };
+
+        let math2 = 3;
+        console.log(is_even(math2));
+
+
+        // Math 3
+        function how_many_even(arr) {
+            total = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (is_even(arr[i]) == true) {
+                    total += 1;
+                }
+            }
+            return total;
+        };
+
+        let math3 = [1,2,2,6,5];
+        console.log(how_many_even(math3));
+
+
+        // Math 4
+        function create_dummy_array(n) {
+            const arr = [];
+            for (let i = 0; i < n; i++) {
+                newNum = Math.floor(Math.random() * 10);
+                arr.push(newNum);
+            }
+            return arr;
+        };
+
+        console.log(create_dummy_array(10));
+
+
+        // Math 5
+        function random_choice(arr) {
+            let result = Math.floor(Math.random() * arr.length);
+            return arr[result];
+        };
+        
+        let math5 = [10,12,14,15];
+        console.log(random_choice(math5));
+    </script>
+</body>
+</html>
